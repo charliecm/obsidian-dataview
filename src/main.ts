@@ -187,6 +187,8 @@ class DataviewTableRenderer extends MarkdownRenderChild {
 			for (let elem of row.data) {
 				if (elem.valueType == 'date') {
 					result.push(renderMinimalDate(elem.value));
+				} else if (elem.valueType == 'null') {
+					result.push("–");
 				} else {
 					result.push("" + elem.value);
 				}
