@@ -204,12 +204,7 @@ export function parseFrontmatterString(value: string): LiteralField {
     if (dateParse.status) {
         return Fields.literal('date', dateParse.value);
     }
-
-    let durationParse = QUERY_LANGUAGE.duration.parse(value);
-    if (durationParse.status) {
-        return Fields.literal('duration', durationParse.value);
-    }
-
+    
     return Fields.literal('string', value);
 }
 
