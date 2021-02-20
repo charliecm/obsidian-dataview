@@ -64,7 +64,8 @@ export function renderTable(container: HTMLElement, headers: string[], values: (
 			if (typeof value == "string") {
 				rowEl.createEl('td', { text: value });
 			} else {
-				rowEl.appendChild(value);
+				let cellEl = rowEl.createEl('td');
+				cellEl.appendChild(value);
 			}
 		}
 	}
